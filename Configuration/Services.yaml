@@ -1,0 +1,16 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  FourViewture\Course\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+
+  FourViewture\Course\Services\:
+    resource: '../Classes/Services/*'
+    autowire: true
+    autoconfigure: true
+    public: true
