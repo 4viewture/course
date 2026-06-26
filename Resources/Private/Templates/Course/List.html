@@ -1,0 +1,60 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <h1>Kurse</h1>
+
+    <f:if condition="{courses}">
+        <f:then>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nummer</th>
+                        <th>Typ</th>
+                        <th>Start</th>
+                        <th>Ende</th>
+                        <th>Adresse</th>
+                        <th>Verfügbarkeit</th>
+                        <th>Aktionen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <f:for each="{courses}" as="course">
+                        <tr>
+                            <td>{course.number}</td>
+                            <td>{course.courseType}</td>
+                            <td><f:format.date format="d.m.Y H:i">{course.courseStartDate}</f:format.date></td>
+                            <td><f:format.date format="d.m.Y H:i">{course.courseEndDate}</f:format.date></td>
+                            <td>
+                                <f:if condition="{course.address}">
+                                    <f:if condition="{settings.addressDetailPid}">
+                                        <f:then>
+                                            <f:link.page pageUid="{settings.addressDetailPid}" additionalParams="{tx_address_address: {address: course.address}}">
+                                                {course.address}
+                                            </f:link.page>
+                                        </f:then>
+                                        <f:else>
+                                            {course.address}
+                                        </f:else>
+                                    </f:if>
+                                </f:if>
+                            </td>
+                            <td>{course.availablePlaces}</td>
+                            <td>
+                                <f:if condition="{course.linkForRegistration}">
+                                    <f:link.external uri="{course.linkForRegistration}" class="btn btn-primary" target="_blank">
+                                        Anmelden
+                                    </f:link.external>
+                                </f:if>
+                            </td>
+                        </tr>
+                    </f:for>
+                </tbody>
+            </table>
+        </f:then>
+        <f:else>
+            <p>Keine Kurse gefunden.</p>
+        </f:else>
+    </f:if>
+</f:section>
+</html>
