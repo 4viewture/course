@@ -10,7 +10,7 @@
 
     <f:if condition="{courses}">
         <f:then>
-            <course:schema courses="{courses}" />
+            <course:courseSchema courses="{courses}" />
             <f:if condition="{settings.layout} == 'list'">
                 <f:then>
                     <f:render partial="Course/List" arguments="{_all}" />
