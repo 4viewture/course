@@ -2,7 +2,9 @@
 
 namespace FourViewture\Course\Services;
 
+use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class CategoryHandlingService
@@ -36,7 +38,7 @@ class CategoryHandlingService
             )->fetchAllAssociative();
     }
 
-    public function getOneCategoryByName(int $pid, string $name): ?array
+    public function getOneCategoryByName(int $pid, string $name, bool $autoCreate = true): ?array
     {
         $key = md5(json_encode([$pid, $name], JSON_THROW_ON_ERROR));
 
@@ -53,11 +55,38 @@ class CategoryHandlingService
                 ]
             )->fetchAssociative();
         if ($category === false) {
+            if ($autoCreate) {
+                $this->createByName($pid, $name);
+                return $this->getOneCategoryByName($pid, $name, false);
+            }
             return null;
         }
 
         $this->knownEntries[$key] = $category;
 
         return $category;
+    }
+
+    protected function createByName(int $pid, string $name): int
+    {
+        if (PHP_SAPI !== 'cli') {
+            Bootstrap::initializeBackendAuthentication();
+        }
+
+        $data = [
+            'pid' => $pid,
+            'title' => $name,
+        ];
+
+        /** @var DataHandler $dataHandler */
+        $dataHandler = GeneralUtility::makeInstance(DataHandler::class);
+        $dataHandler->start([self::TABLE_WITH_CATEGORIES => ['NEW' => $data]], []);
+        $dataHandler->process_datamap();
+
+        if (isset($dataHandler->substNEWwithIDs['NEW'])) {
+            return (int)$dataHandler->substNEWwithIDs['NEW'];
+        }
+
+        return 0;
     }
 }
