@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2026-06-26T15:00:00Z" product-name="course">
+		<header/>
+		<body>
+			<trans-unit id="month.1">
+				<target>Januar</target>
+			</trans-unit>
+			<trans-unit id="month.2">
+				<target>Februar</target>
+			</trans-unit>
+			<trans-unit id="month.3">
+				<target>März</target>
+			</trans-unit>
+			<trans-unit id="month.4">
+				<target>April</target>
+			</trans-unit>
+			<trans-unit id="month.5">
+				<target>Mai</target>
+			</trans-unit>
+			<trans-unit id="month.6">
+				<target>Juni</target>
+			</trans-unit>
+			<trans-unit id="month.7">
+				<target>Juli</target>
+			</trans-unit>
+			<trans-unit id="month.8">
+				<target>August</target>
+			</trans-unit>
+			<trans-unit id="month.9">
+				<target>September</target>
+			</trans-unit>
+			<trans-unit id="month.10">
+				<target>Oktober</target>
+			</trans-unit>
+			<trans-unit id="month.11">
+				<target>November</target>
+			</trans-unit>
+			<trans-unit id="month.12">
+				<target>Dezember</target>
+			</trans-unit>
+			<trans-unit id="courses">
+				<target>Kurse</target>
+			</trans-unit>
+			<trans-unit id="courses_in">
+				<target>Kurse im</target>
+			</trans-unit>
+			<trans-unit id="no_courses_found">
+				<target>Keine Kurse gefunden.</target>
+			</trans-unit>
+			<trans-unit id="number">
+				<target>Nummer</target>
+			</trans-unit>
+			<trans-unit id="type">
+				<target>Typ</target>
+			</trans-unit>
+			<trans-unit id="start">
+				<target>Start</target>
+			</trans-unit>
+			<trans-unit id="end">
+				<target>Ende</target>
+			</trans-unit>
+			<trans-unit id="address">
+				<target>Adresse</target>
+			</trans-unit>
+			<trans-unit id="availability">
+				<target>Verfügbarkeit</target>
+			</trans-unit>
+			<trans-unit id="actions">
+				<target>Aktionen</target>
+			</trans-unit>
+			<trans-unit id="register">
+				<target>Anmelden</target>
+			</trans-unit>
+			<trans-unit id="no_courses">
+				<target>Keine Kurse für diesen Monat gefunden.</target>
+			</trans-unit>
+			<trans-unit id="available">
+				<target>Verfügbar</target>
+			</trans-unit>
+			<trans-unit id="booked_out">
+				<target>Ausgebucht</target>
+			</trans-unit>
+			<trans-unit id="phone">
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="email">
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="www">
+				<target>Webseite</target>
+			</trans-unit>
+			<trans-unit id="back_to_list">
+				<target>Zurück zur Liste</target>
+			</trans-unit>
+			<trans-unit id="google_maps_link">
+				<target>Mit Google Maps navigieren</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

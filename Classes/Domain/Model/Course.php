@@ -2,6 +2,7 @@
 
 namespace FourViewture\Course\Domain\Model;
 
+use FriendsOfTYPO3\TtAddress\Domain\Model\Address;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -22,7 +23,10 @@ class Course extends AbstractEntity
     protected string $linkForRegistration = '';
     protected string $importId = '';
     protected string $importSource = '';
-    protected string $address = '';
+    /**
+     * @var \FriendsOfTYPO3\TtAddress\Domain\Model\Address|null
+     */
+    protected $address = null;
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
@@ -184,14 +188,25 @@ class Course extends AbstractEntity
         $this->importSource = $importSource;
     }
 
-    public function getAddress(): string
+    public function getAddress(): ?Address
     {
         return $this->address;
     }
 
-    public function setAddress(string $address): void
+    public function setAddress(?Address $address): void
     {
         $this->address = $address;
+    }
+
+    public function isAvailable(): bool
+    {
+        if (empty($this->availablePlaces)) {
+            return false;
+        }
+        if ($this->availablePlaces === 'Ausgebucht' || $this->availablePlaces === '0') {
+            return false;
+        }
+        return true;
     }
 
     public function getCategories(): ObjectStorage

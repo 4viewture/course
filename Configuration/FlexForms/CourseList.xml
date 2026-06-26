@@ -1,0 +1,77 @@
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Settings</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.categories>
+                        <label>Categories</label>
+                        <config>
+                            <type>category</type>
+                        </config>
+                    </settings.categories>
+                    <settings.layout>
+                        <label>Layout</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <numIndex index="0">
+                                    <label>Tabelle</label>
+                                    <value>table</value>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <label>Liste (DRK-Design)</label>
+                                    <value>list</value>
+                                </numIndex>
+                            </items>
+                            <default>table</default>
+                        </config>
+                    </settings.layout>
+                    <settings.onlyAvailable>
+                        <label>Only available</label>
+                        <config>
+                            <type>check</type>
+                            <renderType>checkboxToggle</renderType>
+                            <default>0</default>
+                        </config>
+                    </settings.onlyAvailable>
+                    <settings.address>
+                        <label>Address</label>
+                        <config>
+                            <type>group</type>
+                            <allowed>tt_address</allowed>
+                            <size>1</size>
+                            <minitems>0</minitems>
+                            <maxitems>1</maxitems>
+                        </config>
+                    </settings.address>
+                    <settings.limit>
+                        <label>Max records (0 for all)</label>
+                        <config>
+                            <type>number</type>
+                            <default>0</default>
+                        </config>
+                    </settings.limit>
+                    <settings.recordsPerPage>
+                        <label>Records per page</label>
+                        <config>
+                            <type>number</type>
+                            <default>10</default>
+                        </config>
+                    </settings.recordsPerPage>
+                    <settings.detailPid>
+                        <label>Detail Page (Address)</label>
+                        <config>
+                            <type>input</type>
+                            <renderType>inputLink</renderType>
+                        </config>
+                    </settings.detailPid>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

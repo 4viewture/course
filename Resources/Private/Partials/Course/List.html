@@ -1,0 +1,49 @@
+<div class="c-courselist">
+    <f:for each="{courses}" as="course">
+        <div class="c-course-item mb-4 p-3 border rounded shadow-sm">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3 class="h5">{course.courseType}</h3>
+                    <p class="mb-1">
+                        <strong><f:translate key="number" />:</strong> {course.number}
+                    </p>
+                    <p class="mb-1">
+                        <strong><f:translate key="start" />:</strong> <f:format.date format="d.m.Y H:i">{course.courseStartDate}</f:format.date>
+                    </p>
+                    <p class="mb-1">
+                        <strong><f:translate key="end" />:</strong> <f:format.date format="d.m.Y H:i">{course.courseEndDate}</f:format.date>
+                    </p>
+                    <f:if condition="{course.address}">
+                        <p class="mb-1">
+                            <strong><f:translate key="address" />:</strong>
+                            <f:if condition="{settings.detailPid}">
+                                <f:then>
+                                    <f:link.action action="show" pluginName="AddressDetail" controller="Address" arguments="{address: course.address}" pageUid="{settings.detailPid}">
+                                        {course.address.fullName}
+                                    </f:link.action>
+                                </f:then>
+                                <f:else>
+                                    {course.address.fullName}
+                                </f:else>
+                            </f:if>
+                        </p>
+                    </f:if>
+                    <p class="mb-0">
+                        <strong><f:translate key="availability" />:</strong>
+                        <f:if condition="{course.available}">
+                            <f:then><span class="text-success"><f:translate key="available" /></span></f:then>
+                            <f:else><span class="text-danger"><f:translate key="booked_out" /></span></f:else>
+                        </f:if>
+                    </p>
+                </div>
+                <div class="col-md-4 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
+                    <f:if condition="{course.linkForRegistration}">
+                        <f:link.external uri="{course.linkForRegistration}" class="btn btn-primary" target="_blank">
+                            <f:translate key="register" />
+                        </f:link.external>
+                    </f:if>
+                </div>
+            </div>
+        </div>
+    </f:for>
+</div>

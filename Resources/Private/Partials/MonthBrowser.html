@@ -1,0 +1,24 @@
+<div class="c-paginationcontainer">
+    <div class="c-pagination">
+        <div class="c-pagination__list">
+            <f:if condition="{prevDate}">
+                <f:then>
+                    <f:link.action action="month" arguments="{year: '{prevDate -> f:format.date(format: \'Y\')}', month: '{prevDate -> f:format.date(format: \'m\')}'}" class="prev">
+                        &laquo; <f:translate key="month.{prevDate -> f:format.date(format: 'n')}" /> <f:format.date format="Y">{prevDate}</f:format.date>
+                    </f:link.action>
+                </f:then>
+                <f:else>
+                    <span class="prev disabled">&laquo;</span>
+                </f:else>
+            </f:if>
+
+            <span class="current"><f:translate key="month.{currentDate -> f:format.date(format: 'n')}" /> <f:format.date format="Y">{currentDate}</f:format.date></span>
+
+            <f:if condition="{nextDate}">
+                <f:link.action action="month" arguments="{year: '{nextDate -> f:format.date(format: \'Y\')}', month: '{nextDate -> f:format.date(format: \'m\')}'}" class="next">
+                    <f:translate key="month.{nextDate -> f:format.date(format: 'n')}" /> <f:format.date format="Y">{nextDate}</f:format.date> &raquo;
+                </f:link.action>
+            </f:if>
+        </div>
+    </div>
+</div>

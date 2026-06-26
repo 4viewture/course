@@ -2,6 +2,10 @@
 <f:layout name="Default" />
 
 <f:section name="Main">
+    <strong><f:translate key="courses_in" /> <f:translate key="month.{currentDate -> f:format.date(format: 'n')}" /> <f:format.date format="Y">{currentDate}</f:format.date></strong>
+
+    <f:render partial="MonthBrowser" arguments="{_all}" />
+
     <f:if condition="{courses}">
         <f:then>
             <f:if condition="{settings.layout} == 'list'">
@@ -12,11 +16,9 @@
                     <f:render partial="Course/Table" arguments="{_all}" />
                 </f:else>
             </f:if>
-
-            <f:render partial="Pagination" arguments="{_all}" />
         </f:then>
         <f:else>
-            <p><f:translate key="no_courses_found" /></p>
+            <p><f:translate key="no_courses" /></p>
         </f:else>
     </f:if>
 </f:section>

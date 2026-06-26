@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <div class="c-address-detail">
+        <f:if condition="{address.image}">
+            <div class="c-address-detail__images">
+                <f:for each="{address.image}" as="image">
+                    <f:image image="{image}" width="400" alt="{address.fullName}" />
+                </f:for>
+            </div>
+        </f:if>
+
+        <h1>{address.name}</h1>
+        <f:if condition="{address.company}">
+            <p><strong>{address.company}</strong></p>
+        </f:if>
+
+        <address>
+            {address.address}<br />
+            {address.zip} {address.city}
+        </address>
+
+        <f:if condition="{address.phone}">
+            <p><strong><f:translate key="phone" />:</strong> {address.phone}</p>
+        </f:if>
+        <f:if condition="{address.email}">
+            <p><strong><f:translate key="email" />:</strong> <f:link.email email="{address.email}">{address.email}</f:link.email></p>
+        </f:if>
+        <f:if condition="{address.www}">
+            <p><strong><f:translate key="www" />:</strong> <f:link.external uri="{address.www}" target="_blank">{address.www}</f:link.external></p>
+        </f:if>
+
+        <f:if condition="{settings.showGoogleMapsLink}">
+            <p>
+                <f:link.external uri="https://www.google.com/maps/search/?api=1&query={address.address -> f:format.urlencode()}, {address.zip -> f:format.urlencode()} {address.city -> f:format.urlencode()}" target="_blank" class="btn btn-primary">
+                    <f:translate key="google_maps_link" />
+                </f:link.external>
+            </p>
+        </f:if>
+    </div>
+</f:section>
+</html>

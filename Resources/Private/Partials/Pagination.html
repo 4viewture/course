@@ -1,0 +1,25 @@
+<f:if condition="{numberOfPages} > 1">
+    <div class="c-paginationcontainer">
+        <div class="c-pagination">
+            <ul class="c-pagination__list">
+                <f:if condition="{currentPage} > 1">
+                    <li class="prev">
+                        <f:link.action action="list" arguments="{currentPage: '{currentPage - 1}'}">&laquo;</f:link.action>
+                    </li>
+                </f:if>
+
+                <f:for each="{1..numberOfPages}" as="page">
+                    <li>
+                        <f:link.action action="list" arguments="{currentPage: page}" class="{f:if(condition: '{page} == {currentPage}', then: 'current')}">{page}</f:link.action>
+                    </li>
+                </f:for>
+
+                <f:if condition="{currentPage} < {numberOfPages}">
+                    <li class="next">
+                        <f:link.action action="list" arguments="{currentPage: '{currentPage + 1}'}">&raquo;</f:link.action>
+                    </li>
+                </f:if>
+            </ul>
+        </div>
+    </div>
+</f:if>

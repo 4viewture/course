@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2026-06-26T15:00:00Z" product-name="course">
+		<header/>
+		<body>
+			<trans-unit id="month.1">
+				<source>January</source>
+			</trans-unit>
+			<trans-unit id="month.2">
+				<source>February</source>
+			</trans-unit>
+			<trans-unit id="month.3">
+				<source>March</source>
+			</trans-unit>
+			<trans-unit id="month.4">
+				<source>April</source>
+			</trans-unit>
+			<trans-unit id="month.5">
+				<source>May</source>
+			</trans-unit>
+			<trans-unit id="month.6">
+				<source>June</source>
+			</trans-unit>
+			<trans-unit id="month.7">
+				<source>July</source>
+			</trans-unit>
+			<trans-unit id="month.8">
+				<source>August</source>
+			</trans-unit>
+			<trans-unit id="month.9">
+				<source>September</source>
+			</trans-unit>
+			<trans-unit id="month.10">
+				<source>October</source>
+			</trans-unit>
+			<trans-unit id="month.11">
+				<source>November</source>
+			</trans-unit>
+			<trans-unit id="month.12">
+				<source>December</source>
+			</trans-unit>
+			<trans-unit id="courses">
+				<source>Courses</source>
+			</trans-unit>
+			<trans-unit id="courses_in">
+				<source>Courses in</source>
+			</trans-unit>
+			<trans-unit id="no_courses_found">
+				<source>No courses found.</source>
+			</trans-unit>
+			<trans-unit id="number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="start">
+				<source>Start</source>
+			</trans-unit>
+			<trans-unit id="end">
+				<source>End</source>
+			</trans-unit>
+			<trans-unit id="address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="availability">
+				<source>Availability</source>
+			</trans-unit>
+			<trans-unit id="actions">
+				<source>Actions</source>
+			</trans-unit>
+			<trans-unit id="register">
+				<source>Register</source>
+			</trans-unit>
+			<trans-unit id="no_courses">
+				<source>No courses found for this month.</source>
+			</trans-unit>
+			<trans-unit id="available">
+				<source>Available</source>
+			</trans-unit>
+			<trans-unit id="booked_out">
+				<source>Booked out</source>
+			</trans-unit>
+			<trans-unit id="phone">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="www">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="back_to_list">
+				<source>Back to list</source>
+			</trans-unit>
+			<trans-unit id="google_maps_link">
+				<source>Navigate with Google Maps</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
